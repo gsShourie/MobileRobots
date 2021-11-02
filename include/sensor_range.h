@@ -2,14 +2,12 @@
 #define SENSOR_RANGE_H
 
 #include <string>
-//#include "sensor.h"
-//#include <envir.h>
-//#include <robot.h>
+#include "sensor.h"
+
 
 namespace arpro
 {
-class Robot;
-//class Sensor;
+
 
 class RangeSensor : public Sensor
 {
