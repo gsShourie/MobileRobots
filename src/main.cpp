@@ -28,6 +28,8 @@ int main(int argc, char **argv)
 
   envir.addRobot(robot);
 
+  RangeSensor(robot,0.1,0,0);
+
 
   // simulate 100 sec
   while(envir.time() < 100)

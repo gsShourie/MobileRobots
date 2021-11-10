@@ -108,8 +108,15 @@ void Robot::goTo(const Pose &_p)
 void Robot::moveWithSensor(Twist _twist)
 {
     // to fill up, sensor measurement and twist checking
+    for(auto itr:sensors_)
+    {
+        itr->updateFromRobotPose(pose_);
+    }
 
-
+    for(auto itr:sensors_)
+    {
+        itr->correctRobotTwist(_twist);
+    }
 
     // uses X-Y motion (perfect but impossible in practice)
     // moveXYT(_twist.vx, _twist.vy,_twist.w);
