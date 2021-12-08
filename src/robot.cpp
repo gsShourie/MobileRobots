@@ -2,6 +2,7 @@
 #include <math.h>
 #include <robot.h>
 #include <sensor.h>
+#include <sensor_bearing.h>
 
 using namespace arpro;
 using namespace std;
@@ -111,10 +112,6 @@ void Robot::moveWithSensor(Twist _twist)
     for(auto itr:sensors_)
     {
         itr->updateFromRobotPose(pose_);
-    }
-
-    for(auto itr:sensors_)
-    {
         itr->correctRobotTwist(_twist);
     }
 
